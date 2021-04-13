@@ -42,7 +42,7 @@ class Vector3(object):
                        self.z() * other.x() - self.x() * other.z(),
                        self.x() * other.y() - self.y() * other.x())
 
-    def normalize(self):
+    def normalize(self) -> 'Optional[Vector3]':
         return self / self.magnitude()
 
     # The following functions are required for operator overloading

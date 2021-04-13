@@ -17,8 +17,10 @@ class Image:
         """Write the contents of the Image to a file"""
 
         file.write(f"P3 {self.width} {self.height}\n255\n")
+        whole = self.width * self.height
         for row in self.pixels:
             for col in row:
+                curr = self.pixels.index(row) * len(row) + row.index(col)
                 file.write(
                     f"{convert_to_byte(col.x())} {convert_to_byte(col.y())} {convert_to_byte(col.z())} ")
             file.write("\n")

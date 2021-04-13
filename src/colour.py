@@ -6,7 +6,7 @@ class Colour(Vector3):
     """An alias for Vector3 that holds an RGB colour"""
 
     @classmethod
-    def from_hex(cls, code: str = "#ffffff") -> 'Optional[Colour]':
+    def from_hex(cls, code: str = "#FFFFFF") -> 'Optional[Colour]':
         """Convert a hexadecimal colour code to a colour object"""
         r = int(code[1:3], 16) / 255.0
         g = int(code[3:5], 16) / 255.0

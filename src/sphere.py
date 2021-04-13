@@ -14,6 +14,7 @@ class Sphere:
 
     def intersect(self, ray: Ray) -> Optional[float]:
         """Check if a ray intersects with a sphere and return the distance to the point if it does, otherwise return None"""
+
         sphere_to_ray = ray.origin - self.center
         a = ray.direction.dot(ray.direction)
         b = 2.0 * sphere_to_ray.dot(ray.direction)
@@ -25,3 +26,8 @@ class Sphere:
             if t > 0:
                 return t
         return None
+
+    def normal(self, point: Point):
+        """Returns the surface normal to the point on the surface of a sphere"""
+
+        return (point - self.center).normalize()
